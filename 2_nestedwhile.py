@@ -118,6 +118,23 @@ for i in range(len(arr)-1):
             new_arr=new_arr+[(arr[i],arr[j]),]
 print(new_arr)            
 
+# using while loop
+arr = [1,2,3,4,5,6,7,8,9]
+x = int(input("Enter a number: "))
+
+new_arr = []
+i = 0
+
+while i < len(arr) - 1:
+    j = i + 1
+    while j < len(arr):
+        if arr[i] + arr[j] == x:
+            new_arr = new_arr + [(arr[i], arr[j])]
+        j = j + 1
+    i = i + 1
+
+print(new_arr)
+
 
 
 
