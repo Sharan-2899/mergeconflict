@@ -55,6 +55,21 @@ def profile(name, *hobbies, age=18, **info):
 
 profile("Sharan", "Cricket", "Coding", age=20, city="Bangalore", college="MIT")
 
+# order of arguments
+
+def student_info(name, *subjects, age=18, **details):
+    print("Name:", name)
+    print("Subjects:", subjects)
+    print("Age:", age)
+    print("Other Details:", details)
+
+# Calling the function
+student_info(
+    "Sharan", 
+    "Math", "Science", "English",     # *args
+    age=20,                           # default argument overridden
+    city="Bangalore", college="MIT"   # **kwargs
+)
 
 
 
