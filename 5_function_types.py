@@ -1,7 +1,7 @@
 """
 # function without arg and without return
 # function with arg and without return
-# function without arg and with arg
+# function without arg and with return
 # function with arg and with return
  
 """
@@ -73,4 +73,102 @@ student_info(
 
 
 
+"""  ### function as variable """
+def bodhidharma():
+    return "vanakam da mapla....china la irunthu"
+x=bodhidharma
+
+print(bodhidharma())
+print(x())
+
+''' ### function of argument '''
+def square(x):
+    return x * x
+
+def cube(x):
+    return x * x * x
+
+def apply_function(func, value):
+    result = func(value)  # call the function passed as argument
+    print("Result:", result)
+
+apply_function(square, 5)  # Result: 25
+apply_function(cube, 3)    # Result: 27
+
+# function returning another function
+def demo():
+    return 'hi'
+
+def main():
+    print(demo())
+    return "hello"
+
+print(main())
+
+#uppercase function call...
+def touppercase(func):
+    result=func()
+    return result.upper()
+
+def greet():
+    return "hello world"
+
+result1=touppercase(greet)
+print(result1)
+
+# nested function
+
+def outer():
+    def inner():
+      return "i am inner"
+    print(inner())
+    return 'i am outer'  
+print(outer())  
+
+# nested function
+
+def greet(name):
+    def message():
+        return "Hello " + name.upper()
+    return message()
+
+print(greet("Sharan"))
+
+#################
+def outer_function(name):
+    def inner_function():
+        return f"Hello {name.upper()}"
+    return inner_function  # returning the function itself
+
+greet = outer_function("Sharan")  # outer_function returns inner_function
+print(greet())  # calling the inner function
+
+##############
+def outer(a):
+    def inner():
+        return a
+    return inner()
+
+print(outer("hi"))
+
+####################
+def outer(a):
+    def inner():
+        return a
+    return inner
+
+x=print(outer("hi"))
+print(x)
+
+####################
+def outer(a):
+    def inner():
+        return a
+    return inner
+
+
+
+x=outer("hi")
+del outer
+print(x())
 
