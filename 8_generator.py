@@ -15,3 +15,15 @@ def demo():
 gen=demo()        
 print(next(gen))   
 print(next(gen)) 
+
+# fibonacci
+
+def fibonacci(n):
+    a, b = 0, 1           
+    for _ in range(n):
+        yield a           
+        a, b = b, a + b   
+
+gen = fibonacci(10)
+for num in gen:
+    print(num)
